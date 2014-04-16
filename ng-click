@@ -1,3 +1,4 @@
+```html
 <html ng-app="nameApp">
   <head>
     <meta charset="utf-8">
@@ -34,3 +35,4 @@
     <button ng-click="addName(myName)">Add My Name</button>
   </body>
 </html>
+```

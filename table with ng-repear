@@ -1,0 +1,25 @@
+<html ng-app="nameApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js List View</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script>
+      var nameApp = angular.module('nameApp', []);
+      nameApp.controller('NameCtrl', function ($scope){
+        $scope.names = ['js', 'python', 'java' ,[1,2,3]];
+      });
+    </script>
+  </head>
+  <body ng-controller="NameCtrl">
+      <table border="1">
+          <thead>
+              <tr><th> list content</th></tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="name in names"><td>{{name}}</td></tr>
+              
+          </tbody>
+          
+      </table>
+  </body>
+</html>

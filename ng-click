@@ -1,0 +1,36 @@
+<html ng-app="nameApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script src="https://gist.github.com/1009439.js"></script>
+    <script>
+      var nameApp = angular.module('nameApp', []);
+      nameApp.controller('NameCtrl', function ($scope){
+        $scope.names = ['Larry', 'Curly', 'Moe'];
+
+        $scope.addName = function() {
+          $scope.names.push($scope.enteredName);
+          $scope.enteredName = '';
+        };
+
+        $scope.removeName = function(name) {
+          var i = $scope.names.indexOf(name);
+          $scope.removed=name;
+          $scope.names.splice(i, 1);
+        };
+        
+        $scope.addName = function(myName){
+            
+            $scope.names.push(myName);
+            $scope.myName="";
+        };
+      });
+    </script>
+  </head>
+  <body ng-controller="NameCtrl">
+    List of Names in the selection {{names}}
+    <input ng-model="myName" type="text" />
+    <button ng-click="addName(myName)">Add My Name</button>
+  </body>
+</html>
